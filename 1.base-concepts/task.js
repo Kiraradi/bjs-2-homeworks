@@ -29,7 +29,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   }
   let today = new Date();
   let monthsNumbers = (date.getFullYear() - today.getFullYear()) * 12 + (date.getMonth() - today.getMonth());
-  let feeMonthly = (amount - contribution) * (percent/12 + ((percent / 12) / (Math.pow(1 + percent/12, monthsNumbers) - 1)));
+  let feeMonthly = (amount - contribution) * ((percent/12)/100 + (((percent/12)/100) / (Math.pow(1 + (percent/12)/100, monthsNumbers) - 1)));
   totalAmount = +(feeMonthly * monthsNumbers).toFixed(2);
   console.log(totalAmount);
   return totalAmount;
