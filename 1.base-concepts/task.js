@@ -8,8 +8,6 @@ function solveEquation(a, b, c) {
     arr.push((-b - Math.sqrt(discriminant) )/(2*a));
   } else if (discriminant === 0) {
     arr.push(-b / (2 * a));
-  } else {
-    arr =[];
   } 
   return arr; // array
 }
@@ -37,4 +35,4 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 
 function checkNumbers (newNumbers) {
   return typeof +newNumbers === "number" && !isNaN(newNumbers);
-}Ы
+}
