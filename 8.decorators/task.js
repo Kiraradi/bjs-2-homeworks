@@ -22,9 +22,19 @@ function cachingDecoratorNew(func) {
 function debounceDecoratorNew(func, delay) {
   // Ваш код
   let timeoutId = null;
+  let flag = true;
+
   function debounceFunc(...args) {
     debounceFunc.allCount++;
-    if(timeoutId) {
+
+    if (flag) {
+      flag = false;
+      debounceFunc.count++;
+      func.call(this,...args);
+      return;
+    }
+
+    if (timeoutId) {
       clearTimeout(timeoutId);
     }
 
